@@ -1,0 +1,39 @@
+.wrapper {
+	border: 1px solid #000;
+
+	width: 500px;
+	height: 500px;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 15% 85%;
+
+	.shedule {
+		width: 100%;
+		height: 100%;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 15% 83%;
+		gap: 2%;
+
+		.weekDays {
+			width: 100%;
+			height: 100%;
+			border-radius: 20px;
+
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			grid-template-rows: 1fr;
+			gap: 1%;
+		}
+		.monthDays {
+			gap: 1%;
+			width: 100%;
+			height: 100%;
+			display: grid;
+			grid-template-columns: repeat(7, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+		}
+	}
+}

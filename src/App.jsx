@@ -1,10 +1,13 @@
 import { React } from 'react'
-import styles from './styles.module.css'
+import styles from './App.module.scss'
+import Calendar from './calendar'
 
 function App() {
-	return (<div className={styles.app}>
-
-  </div>)
+	return (
+		<div className={styles.app}>
+			<Calendar />
+		</div>
+	)
 }
 
 export default App
