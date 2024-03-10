@@ -7,4 +7,15 @@
 	justify-content: center;
 	height: 100%;
 	width: 100%;
+
+	position: relative;
+
+	.event_counter {
+		position: absolute;
+		top: 3px;
+		right: 3px;
+
+		font-size: 80%;
+		color: #4d4d4d;
+	}
 }

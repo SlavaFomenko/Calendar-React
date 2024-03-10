@@ -22,6 +22,11 @@
 		flex-direction: column;
 		gap: 10px;
 	}
+	main {
+		height: 90%;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
 }
 
 @keyframes slideIn {

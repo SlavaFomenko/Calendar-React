@@ -91,7 +91,7 @@ const Calendar = () => {
 			<main className={styles.shedule}>
 				<ul className={styles.weekDays}>
 					{DAYS_OF_WEEK.map(day => (
-						<Day key={day} info={{ value: day }} />
+						<Day key={day} info={{ value: day }} disable={true}/>
 					))}
 				</ul>
 				<ul className={styles.monthDays}>{days}</ul>
