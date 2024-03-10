@@ -30,7 +30,18 @@ const Calendar = () => {
 	let prevMonthLastDay = endOfMonth(subMonths(date, 1)).getDate()
 
 	do {
-		days.unshift(<Day value={prevMonthLastDay} />)
+		const currentDate = new Date(
+			subMonths(date, 1).getFullYear(),
+			subMonths(date, 1).getMonth(),
+			prevMonthLastDay
+		)
+		days.unshift(
+			<Day
+				key={currentDate}
+				info={{ value: prevMonthLastDay, date: currentDate }}
+			/>
+		)
+
 		prevMonthLastDay--
 		startOfMonthIndex--
 	} while (startOfMonthIndex - 1 > 0)
@@ -38,13 +49,27 @@ const Calendar = () => {
 	let currentDay = 1
 
 	do {
-		days.push(<Day value={currentDay} />)
+		const currentDate = new Date(
+			date.getFullYear(),
+			date.getMonth(),
+			currentDay
+		)
+		days.push(
+			<Day key={currentDate} info={{ value: currentDay, date: currentDate }} />
+		)
 		currentDay++
 	} while (currentDay <= endOfMonth(date).getDate())
 
 	currentDay = 1
-	while (days.length < 35) {
-		days.push(<Day value={currentDay} />)
+	while (days.length < 42) {
+		const currentDate = new Date(
+			date.getFullYear(),
+			date.getMonth() + 1,
+			currentDay
+		)
+		days.push(
+			<Day key={currentDate} info={{ value: currentDay, date: currentDate }} />
+		)
 		currentDay++
 	}
 
@@ -58,7 +83,7 @@ const Calendar = () => {
 			<main className={styles.shedule}>
 				<ul className={styles.weekDays}>
 					{DAYS_OF_WEEK.map(day => (
-						<Day value={day} />
+						<Day key={day} info={{ value: day }} />
 					))}
 				</ul>
 				<ul className={styles.monthDays}>{days}</ul>

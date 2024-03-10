@@ -2,8 +2,9 @@
 	border: 1px solid #000;
 
 	width: 500px;
-	height: 500px;
+	height: 550px;
 
+	padding: 10px;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 15% 85%;
@@ -33,7 +34,7 @@
 			height: 100%;
 			display: grid;
 			grid-template-columns: repeat(7, 1fr);
-			grid-template-rows: repeat(5, 1fr);
+			grid-template-rows: repeat(6, 1fr);
 		}
 	}
 }

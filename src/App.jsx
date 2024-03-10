@@ -3,6 +3,7 @@ import styles from './App.module.scss'
 import Calendar from './calendar'
 
 function App() {
+	console.log('hello')
 	return (
 		<div className={styles.app}>
 			<Calendar />
