@@ -1,0 +1,45 @@
+.form {
+	width: 100%;
+	height: auto;
+
+	padding: 20px;
+	border: 1px solid black;
+
+	border-radius: 10px;
+
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+
+	input {
+		padding-left: 10px;
+		height: 40px;
+		border: 1px solid black;
+		border-radius: 10px;
+	}
+	textarea {
+		padding: 10px;
+		height: 60px;
+		border-radius: 10px;
+		border: 1px solid black;
+	}
+}
+
+.event {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	border-radius: 10px;
+	gap: 10px;
+	button {
+		margin: 0 auto;
+		width: 50%;
+		padding: 10px;
+	}
+
+	border: 1px solid #000;
+	span {
+		height: 20px;
+	}
+}

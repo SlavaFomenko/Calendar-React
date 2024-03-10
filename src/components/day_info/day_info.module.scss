@@ -6,11 +6,24 @@
 	height: 550px;
 	padding: 10px;
 
-	/* Используем анимацию */
 	animation: slideIn 0.5s ease-in-out forwards;
+	header {
+		width: 100%;
+		height: 10%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		button {
+			height: 50%;
+		}
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 }
 
-/* Анимация для появления (сдвигаем элемент из-за пределов экрана на видимое место) */
 @keyframes slideIn {
 	from {
 		transform: translateX(0%);

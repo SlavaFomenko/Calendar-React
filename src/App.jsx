@@ -1,13 +1,14 @@
-import { React } from 'react'
+import { React, useContext } from 'react'
 import { useSelector } from 'react-redux'
 import styles from './App.module.scss'
 import Calendar from './calendar'
 import DayInfo from './components/day_info/day_info'
 
+// import { EventsContext } from './context/eventsContext'
+
 function App() {
 	const day = useSelector(state => state.date.day)
 
-	// console.log(date)
 	return (
 		<div className={styles.app}>
 			<Calendar />
