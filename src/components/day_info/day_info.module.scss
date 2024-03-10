@@ -1,0 +1,21 @@
+.wrapper {
+	position: absolute;
+	z-index: 1;
+	border: 1px solid #000;
+	width: 500px;
+	height: 550px;
+	padding: 10px;
+
+	/* Используем анимацию */
+	animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Анимация для появления (сдвигаем элемент из-за пределов экрана на видимое место) */
+@keyframes slideIn {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(52.5%);
+	}
+}

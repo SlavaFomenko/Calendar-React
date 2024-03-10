@@ -1,4 +1,4 @@
-import { SETDATE, DELETEDATE } from '../actions/index'
+import { DELETE_DATE, SET_DATE } from '../actions/index'
 
 const initialState = {
 	day: null,
@@ -6,12 +6,12 @@ const initialState = {
 
 const dayReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case SETDATE:
+		case SET_DATE:
 			return {
 				...state,
-				day: action.payload,
+				day: new Date(action.payload),
 			}
-		case DELETEDATE:
+		case DELETE_DATE:
 			return {
 				...state,
 				day: null,

@@ -1,6 +1,7 @@
 .wrapper {
+	z-index: 2;
 	border: 1px solid #000;
-
+	background-color: white;
 	width: 500px;
 	height: 550px;
 
@@ -8,7 +9,6 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 15% 85%;
-
 	.shedule {
 		width: 100%;
 		height: 100%;
@@ -37,4 +37,10 @@
 			grid-template-rows: repeat(6, 1fr);
 		}
 	}
+}
+
+.visible {
+	position: absolute;
+	transform: translateX(-52.5%);
+	transition: 0.5s ease-in-out;
 }

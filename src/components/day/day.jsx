@@ -1,16 +1,24 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { setDate } from '../../actions'
 import styles from './day.module.scss'
-// import { useDispatch, useSelector } from 'react-redux'
 
 const Day = ({ info }) => {
-	// const date = useSelector(state => state.date)
-	// const dispatch = useDispatch()
-	// console.log(info)
-
 	const { value, date } = info
 
+	const dateSelector = useSelector(state => state.date)
+	const dispatch = useDispatch()
+
+	const setCurrentDate = () => {
+		if (!dateSelector.day) {
+			dispatch(setDate(date.getTime()))
+		} else {
+			dispatch(setDate(date))
+		}
+	}
+
 	return (
-		<li className={styles.day} onClick={() => console.log(date)}>
+		<li className={styles.day} onClick={setCurrentDate}>
 			{value}
 		</li>
 	)

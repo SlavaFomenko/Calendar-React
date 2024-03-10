@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import {
 	addMonths,
 	endOfMonth,
@@ -10,11 +11,14 @@ import React, { useState } from 'react'
 import styles from './Calendar.module.scss'
 import ChangeMonth from './components/buttons/ChangeMonth'
 import Day from './components/day/day'
+import { useSelector } from 'react-redux'
 
 const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
 const Calendar = () => {
 	const [date, setData] = useState(new Date())
+
+	const dayStore = useSelector(state => state.date.day)
 
 	const incrementMonth = () => {
 		setData(date => addMonths(date, 1))
@@ -74,7 +78,11 @@ const Calendar = () => {
 	}
 
 	return (
-		<section className={styles.wrapper}>
+		<section
+			className={classNames(styles.wrapper, {
+				[styles.visible]: dayStore,
+			})}
+		>
 			<header>
 				<ChangeMonth events={{ incrementMonth, decrementMonth }}>
 					<span>{format(date, 'dd.MM.yyyy')}</span>
